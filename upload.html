@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conjexa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style>
+        /* Set the background image and color */
+        body {
+            background: url('https://st4.depositphotos.com/36568678/38703/v/600/depositphotos_387034738-stock-illustration-medical-background-global-connectivity-suitable.jpg') no-repeat;
+            background-size: cover;
+            background-color: #908b8b; /* Set a background color */
+            color: #333; /* Text color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose a suitable font-family */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-image: url('https://st3.depositphotos.com/1157091/18873/v/450/depositphotos_188736164-stock-illustration-abstract-medical-background.jpg');
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 90%; /* Adjust the width as needed */
+            max-width: 800px; /* Set your desired maximum width here */
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: #0099cc;
+        }
+
+        .upload-text {
+            font-size: 18px;
+            color: #555;
+        }
+
+        img {
+            display: none;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 10px solid #edf0f0;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-container .btn {
+            display: none;
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-proceed {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .btn-reupload {
+            background-color: #f44336;
+            color: #fff;
+        }
+
+        /* Fade in image and buttons when they become visible */
+        .image-visible img,
+        .buttons-visible .btn {
+            animation: fadeIn 1s;
+        }
+
+        /* Add transition effect to the buttons */
+        .btn {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Upload your images</h1>
+        <div class="upload-box">
+            <h2 class="upload-text">Select a file to upload</h2>
+            <p>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </p>
+            <form method="post" action="/upload_image" enctype="multipart/form-data">
+                <dl>
+                    <p>
+                        {% if not filename %}
+                            <input type="file" name="file" class="form-control" autocomplete="off" required>
+                            <input type="submit" value="Submit" class="btn btn-info">
+                        {% endif %}
+                    </p>
+                </dl>
+            </form>
+            {% if filename %}
+                <div class="image-visible">
+                    <img src="{{ url_for('display_image', filename=filename) }}" width="300" height="300">
+                </div>
+                <div class="btn-container buttons-visible">
+                    <form method="post" action="/">
+                        <button class="btn btn-proceed">Proceed</button>
+                    </form>
+                    <form method="get" action="/">
+                        <button class="btn btn-reupload">Reupload</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

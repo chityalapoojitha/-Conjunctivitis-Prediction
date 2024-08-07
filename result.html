@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction</title>
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/017/398/089/original/digital-eye-data-network-cyber-security-technology-binary-code-0-to-1-glowing-blue-on-dark-background-futuristic-tech-of-virtual-cyberspace-and-internet-secure-surveillance-safety-scanner-vector.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 60%;
+            height: 60vh;
+            background: rgba(181, 181, 181, 0.8);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            padding: 60px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 24px;
+            color: black;
+            margin: 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #1e6fa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="flex: 1;"></div> <!-- Push content to the center vertically -->
+        <p><strong><bold>Prediction: {{ result }}</bold></strong></p>
+        <div style="flex: 1;"></div> <!-- Push content to the center vertically -->
+    </div>
+    <div>
+        <a href="/precautions">Precautions</a>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

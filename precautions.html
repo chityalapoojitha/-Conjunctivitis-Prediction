@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Precautions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/017/398/089/original/digital-eye-data-network-cyber-security-technology-binary-code-0-to-1-glowing-blue-on-dark-background-futuristic-tech-of-virtual-cyberspace-and-internet-secure-surveillance-safety-scanner-vector.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        .show-modal {
+            display: block;
+        }
+
+        /* Center the button in the middle of the page */
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+
+        /* Hide the button when the modal is displayed */
+        .hide-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal" id="precautionsModal">
+        <div class="modal-content">
+            <h1>Precautions</h1>
+            <p>Here are some precautions for conjunctivitis:</p>
+            <ul>
+                <li>Wash your hands frequently.</li>
+                <li>Avoid touching your eyes with unwashed hands.</li>
+                <li>Use clean tissues to wipe your eyes and face.</li>
+                <li>Avoid sharing personal items like towels and makeup.</li>
+            </ul>
+            <a href="/">Back </a> <!-- Update the href attribute to "index.html" -->
+        </div>
+    </div>
+    <button id="precautionsButton" onclick="showPrecautions()">Show Precautions</button>
+
+    <script>
+        function showPrecautions() {
+            var modal = document.getElementById("precautionsModal");
+            var button = document.getElementById("precautionsButton");
+
+            modal.classList.add("show-modal");
+            button.classList.add("hide-button");
+        }
+    </script>
+</body>
+</html>

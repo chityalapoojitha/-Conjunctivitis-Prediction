@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Options</title>
+    <style>
+        body {
+            background-image: url('https://pbs.twimg.com/media/FE-qUxpWUAM9Srr?format=jpg&name=small');
+
+     background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333; /* Text color */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #010207; /* Change font color of the heading to white */
+        }
+
+     p {
+            font-size: 20px;
+            color: #fff; /* Change font color of the paragraph to white */
+        }
+
+        button {
+            background: linear-gradient(135deg, #b14fb8, #9b25bc); /* Gradient background */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 20px; /* Rounded corners */
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ab69b0, #9f46b8); /* Gradient background on hover */
+            transform: scale(1.05); /* Slight scale up on hover */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Increased shadow effect on hover */
+        }
+    </style>
+
+</head>
+<body>
+    <p><strong>Welcome {{ name }}, Choose one option</strong></p>
+    <form method="GET" action="/capture">
+        <!-- <button type="submit">Use Camera</button> -->
+    </form>
+    <form method="GET" action="/upload">
+        <button type="submit">Upload an Image</button>
+    </form>
+
+</body>
+</html>

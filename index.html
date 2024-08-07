@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body style="background-image: url('https://c4.wallpaperflare.com/wallpaper/378/304/3/abstract-eyes-dots-digital-art-wallpaper-preview.jpg'); background-size: cover; background-position: center;">
+    <div class="center-container">
+        <div class="container">
+            <h1>Welcome to CONJEXA</h1>
+            <p>Enter your Details</p>
+            <form method="POST" action="/options">
+                <label for="name">Name:</label>
+                <input type="text" name="name" required><br><br>
+                <label for="age">Age:</label>
+                <input type="number" name="age" required style="font-size: 18px;"><br><br>
+                <button type="submit">Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            width: 400px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            height: 40px;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.5); /* Light white background color */
+            color: white;
+            font-size: 21px; /* Increased font size */
+        }
+
+        input[type="text"]::placeholder,
+        input[type="number"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            width: calc(100% - 20px);
+            height: 40px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</body>
+</html>
